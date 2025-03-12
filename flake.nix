@@ -3,8 +3,8 @@
 
   inputs = {
     # Nix Inputs
-    nixpkgs.url = github:nixos/nixpkgs/?ref=nixos-22.11;
-    flake-utils.url = github:numtide/flake-utils;
+    nixpkgs.url = "github:nixos/nixpkgs/?ref=nixos-24.11";
+    flake-utils.url = "github:numtide/flake-utils";
     hs-flake-utils.url = "git+https://whetstone.private.storage/jcalderone/hs-flake-utils.git?ref=main";
     hs-flake-utils.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -21,7 +21,7 @@
       hslib = hs-flake-utils.lib {
         pkgs = nixpkgs.legacyPackages.${system};
         src = ./.;
-        compilerVersion = "ghc8107";
+        compilerVersion = "ghc966";
         packageName = "spake2";
       };
     in {
